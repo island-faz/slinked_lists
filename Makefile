@@ -5,7 +5,7 @@
 ## Login   <bourhi_a@epitech.net>
 ## 
 ## Started on  Tue Mar 18 18:24:20 2014 
-## Last update Tue May 13 00:06:44 2014 
+## Last update Tue May 13 02:53:45 2014 
 ##
 
 NAME		=	liblist.a
@@ -23,7 +23,7 @@ SRC		= 	src/init_list.c \
 
 OBJ		=	$(SRC:.c=.o)
 
-CC		=	cc -W -Wall -ansi -pedantic -Wextra -g
+CC		=	cc -W -Wall -ansi -pedantic -Wextra
 
 RM		=	rm -f
 

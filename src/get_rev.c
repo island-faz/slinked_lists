@@ -5,21 +5,32 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Sat May  3 20:25:39 2014 
-** Last update Mon May 12 21:47:17 2014 
+** Last update Tue May 13 02:23:47 2014 
 */
 
 #include <list.h>
 
-t_list		*get_rev(t_list *lst)
+t_glist		*get_rev(t_glist *lst)
 {
-  t_list	*rev;
+  int		i;
+  t_glist	*rev;
+  t_list	*list;
 
-  rev = 0;
-  if (lst)
-    while (lst)
-      {
-	/* push_front(&rev, lst->data); */
-	lst = lst->next;
-      }
+  i = 0;
+  rev = init_list();
+  list = lst->list;
+  if (!rev || !list)
+    return (0x0);
+  if (list)
+    {
+      while (list)
+	{
+	  push_front(rev, list->data);
+	  if (!i)
+	    rev->last_elem = rev->list;
+	  list = list->next;
+	  i = 1;
+	}
+    }
   return (rev);
 }
