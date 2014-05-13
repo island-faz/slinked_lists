@@ -5,23 +5,25 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 20 18:46:08 2014 
-** Last update Mon May 12 17:53:53 2014 
+** Last update Tue May 13 02:07:10 2014 
 */
 
 #include <list.h>
 
-int	in_lst(t_list *lst, void *data, int (*cmp)(void*, void*))
+int		in_lst(t_glist *glst, void *data, int (*cmp)(void*, void*))
 {
-  int	flag;
+  int		nb;
+  t_list	*lst;
 
+  nb = 0;
+  lst = glst->list;
   if (!lst)
-    return (0);
+    return (0x0);
   while (lst)
     {
-      flag = cmp(lst->data, data);
-      if (flag)
-	return (flag);
+      if (!cmp(lst->data, data))
+	nb++;
       lst = lst->next;
     }
-  return (0x0);
+  return (nb);
 }

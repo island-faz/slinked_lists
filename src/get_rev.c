@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Sat May  3 20:25:39 2014 
-** Last update Mon May 12 17:55:25 2014 
+** Last update Mon May 12 21:47:17 2014 
 */
 
 #include <list.h>
@@ -18,7 +18,7 @@ t_list		*get_rev(t_list *lst)
   if (lst)
     while (lst)
       {
-	push_front(&rev, lst->data);
+	/* push_front(&rev, lst->data); */
 	lst = lst->next;
       }
   return (rev);

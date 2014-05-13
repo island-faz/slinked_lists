@@ -5,13 +5,13 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu May  1 02:55:05 2014 
-** Last update Mon May 12 17:57:12 2014 
+** Last update Tue May 13 01:25:13 2014 
 */
 
 #include <stdlib.h>
 #include <list.h>
 
-int      push_front(t_list **lst, void *data)
+int      push_front(t_glist *lst, void *data)
 {
   t_list      *tmp;
 
@@ -19,7 +19,12 @@ int      push_front(t_list **lst, void *data)
   if (!tmp)
     return (0x0);
   tmp->data = data;
-  tmp->next = *lst;
-  *lst = tmp;
+  tmp->prev = 0;
+  tmp->next = lst->list;
+  if (lst->list)
+    lst->list->prev = tmp;
+  else
+    lst->last_elem = tmp;
+  lst->list = tmp;
   return (!0x0);
 }

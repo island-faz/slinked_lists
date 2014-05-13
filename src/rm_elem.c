@@ -5,28 +5,47 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 20 20:07:10 2014 
-** Last update Mon May 12 17:54:13 2014 
+** Last update Tue May 13 02:06:06 2014 
 */
 
+#include <stdio.h>
 #include <list.h>
 
-void		rm_elem(t_list **lst, void *data, int (*fmt)(void*, void*))
+void		rm_element(t_glist *lst, t_list *tmp)
 {
-  t_list	*tmp;
-  int		flag;
-  void		*f_free;
-
-  if (!(*lst))
-    return ;
-  tmp = *lst;
-  if (fmt(tmp->data, data))
-    tmp = tmp->next;
+  if (!tmp->next && !tmp->prev)
+    {
+      lst->list = 0;
+      lst->last_elem = 0;
+    }
+  else if (!tmp->next)
+    rm_last(lst); 
+  else if (!tmp->prev)
+    rm_first(lst);
   else
-    while (tmp && tmp->next)
-      {
-	if (fmt(tmp->next->data, data))
-	  tmp->next = (tmp->next ? tmp->next->next : 0);
-	tmp = tmp->next;
-      }
-  *lst = tmp;
+    {
+      tmp->prev->next = tmp->next;
+      tmp->next = tmp->prev;
+    }  
+}
+
+int		rm_elem(t_glist *lst, void *data, int (*cmp)(void*, void*))
+{
+  int		nb;
+  t_list	*tmp;
+
+  nb = 0;
+  tmp = lst->list;
+  if (!tmp)
+    return (0x0);
+  while (tmp)
+    {
+      if (!cmp(tmp->data, data))
+	{
+	  rm_element(lst, tmp);
+	  nb++;
+	}
+      tmp = tmp->next;
+    }
+  return (nb);
 }

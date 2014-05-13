@@ -5,29 +5,24 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Sat May  3 06:10:16 2014 
-** Last update Mon May 12 17:55:13 2014 
+** Last update Tue May 13 01:05:51 2014 
 */
 
 #include <list.h>
 
-int		rm_last(t_list **lst)
+int		rm_last(t_glist *lst)
 {
   t_list	*tmp;
-  int		lst_len;
 
-  if (!(*lst))
-    return (0);
-  tmp = *(lst);
-  lst_len = list_len(tmp);
-  if (lst_len == 1)
-    *lst = 0;
-  else if (lst_len == 2)
-    (*lst)->next = 0;
-  else if (lst_len >= 3)
+  tmp = lst->last_elem;
+  if (!tmp)
+    return (0x0);
+  if (tmp->prev)
     {
-      while (tmp->next->next)
-	tmp = tmp->next;
-      tmp->next = 0;
+      tmp->prev->next = 0;
+      lst->last_elem = tmp->prev;
     }
+  else
+    lst->list = 0;
   return (1);
 }

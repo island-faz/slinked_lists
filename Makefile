@@ -5,15 +5,15 @@
 ## Login   <bourhi_a@epitech.net>
 ## 
 ## Started on  Tue Mar 18 18:24:20 2014 
-## Last update Mon May 12 17:56:29 2014 
+## Last update Tue May 13 00:06:44 2014 
 ##
 
 NAME		=	liblist.a
 
-SRC		= 	src/push_back.c \
+SRC		= 	src/init_list.c \
+			src/push_back.c \
 			src/push_front.c \
 			src/in_list.c \
-			src/last_node.c \
 			src/rm_elem.c \
 			src/list_len.c \
 			src/rm_first.c \
@@ -23,7 +23,7 @@ SRC		= 	src/push_back.c \
 
 OBJ		=	$(SRC:.c=.o)
 
-CC		=	cc -g
+CC		=	cc -W -Wall -ansi -pedantic -Wextra -g
 
 RM		=	rm -f
 

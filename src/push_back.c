@@ -5,30 +5,32 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 05:13:00 2014 
-** Last update Mon May 12 17:56:54 2014 
+** Last update Tue May 13 01:16:36 2014 
 */
 
 #include <stdlib.h>
 #include <list.h>
 
-int	      push_back(t_list **lst, void *data)
+int	      push_back(t_glist *lst, void *data)
 {
   t_list      *tmp;
-  t_list      *tmp_l;
 
   tmp = malloc(sizeof(t_list));
   if (!tmp)
     return (0x0);
   tmp->data = data;
   tmp->next = 0;
-  if (*lst == 0)
-    *lst = tmp;
+  if (lst->list == 0)
+    {
+      tmp->prev = 0;
+      lst->list = tmp;
+      lst->last_elem = tmp;
+    }
   else
     {
-      tmp_l = *lst;
-      while (tmp_l->next)
-	tmp_l = tmp_l->next;
-      tmp_l->next = tmp;
+      tmp->prev = lst->last_elem;
+      lst->last_elem->next = tmp;
+      lst->last_elem = lst->last_elem->next;
     }
   return (1);
 }
