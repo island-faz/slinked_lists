@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Sat May  3 23:01:03 2014 
-** Last update Tue May 13 00:06:11 2014 
+** Last update Tue May 13 14:00:31 2014 
 */
 
 #include <list.h>
@@ -30,7 +30,7 @@ int		sort_list(t_glist *lst, int (*cmp)(void*, void*))
 	      tmp_w->next->data = data;
 	    }
 	  tmp_w = tmp_w->next;
-	}      
+	}
     }
   return (!0x0);
 }

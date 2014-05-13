@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Sat May  3 06:10:16 2014 
-** Last update Tue May 13 01:05:51 2014 
+** Last update Tue May 13 14:56:44 2014 
 */
 
 #include <list.h>
@@ -23,6 +23,10 @@ int		rm_last(t_glist *lst)
       lst->last_elem = tmp->prev;
     }
   else
-    lst->list = 0;
+    {
+      lst->list = 0;
+      lst->last_elem = 0;
+    }
+  lst->len--;
   return (1);
 }

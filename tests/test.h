@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Tue May 13 13:09:32 2014 
-** Last update Tue May 13 13:16:18 2014 
+** Last update Tue May 13 14:15:40 2014 
 */
 
 #ifndef		TEST_H_
@@ -23,7 +23,7 @@ typedef struct		s_elem
 }			t_elem;
 
 int		put_elements(t_glist *lst, int nb_elems);
-void		show_elements(t_glist *lst);
+void		show_list_content(t_glist *lst);
 void		end_to_start(t_glist *lst);
 int		data_cmp(void *d1, void *d2);
 int		data_cmp_opp(void *d1, void *d2);

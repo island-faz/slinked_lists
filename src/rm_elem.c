@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 20 20:07:10 2014 
-** Last update Tue May 13 02:06:06 2014 
+** Last update Tue May 13 14:49:30 2014 
 */
 
 #include <stdio.h>
@@ -43,6 +43,7 @@ int		rm_elem(t_glist *lst, void *data, int (*cmp)(void*, void*))
       if (!cmp(tmp->data, data))
 	{
 	  rm_element(lst, tmp);
+	  lst->len--;
 	  nb++;
 	}
       tmp = tmp->next;

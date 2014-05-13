@@ -5,7 +5,7 @@
 ## Login   <bourhi_a@epitech.net>
 ## 
 ## Started on  Tue Mar 18 18:24:20 2014 
-## Last update Tue May 13 02:53:45 2014 
+## Last update Tue May 13 13:42:28 2014 
 ##
 
 NAME		=	liblist.a
@@ -20,10 +20,11 @@ SRC		= 	src/init_list.c \
 			src/rm_last.c \
 			src/get_rev.c \
 			src/sort_list.c \
+			src/clone_list.c \
 
 OBJ		=	$(SRC:.c=.o)
 
-CC		=	cc -W -Wall -ansi -pedantic -Wextra
+CC		=	cc -W -Wall -ansi -pedantic -Wextra -g
 
 RM		=	rm -f
 

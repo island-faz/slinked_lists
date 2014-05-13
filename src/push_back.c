@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 05:13:00 2014 
-** Last update Tue May 13 01:16:36 2014 
+** Last update Tue May 13 15:00:18 2014 
 */
 
 #include <stdlib.h>
@@ -20,17 +20,18 @@ int	      push_back(t_glist *lst, void *data)
     return (0x0);
   tmp->data = data;
   tmp->next = 0;
-  if (lst->list == 0)
-    {
-      tmp->prev = 0;
-      lst->list = tmp;
-      lst->last_elem = tmp;
-    }
-  else
+  if (lst->list)
     {
       tmp->prev = lst->last_elem;
       lst->last_elem->next = tmp;
       lst->last_elem = lst->last_elem->next;
     }
+  else
+    {
+      tmp->prev = 0;
+      lst->list = tmp;
+      lst->last_elem = tmp;
+    }
+  lst->len++;
   return (1);
 }

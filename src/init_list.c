@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Mon May 12 21:21:44 2014 
-** Last update Tue May 13 00:30:59 2014 
+** Last update Tue May 13 14:09:36 2014 
 */
 
 #include <stdlib.h>
@@ -19,6 +19,7 @@ t_glist		*init_list()
   if (!lst)
     return (0x0);
   lst->list = 0;
+  lst->len = 0;
   lst->last_elem = 0;
   return (lst);
 }

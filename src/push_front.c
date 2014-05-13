@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu May  1 02:55:05 2014 
-** Last update Tue May 13 01:25:13 2014 
+** Last update Tue May 13 14:48:40 2014 
 */
 
 #include <stdlib.h>
@@ -26,5 +26,6 @@ int      push_front(t_glist *lst, void *data)
   else
     lst->last_elem = tmp;
   lst->list = tmp;
+  lst->len++;
   return (!0x0);
 }
