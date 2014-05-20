@@ -5,7 +5,7 @@
 ** Login   <bourhi_a@epitech.net>
 ** 
 ** Started on  Thu Mar 13 05:15:43 2014 
-** Last update Tue May 13 14:09:45 2014 
+** Last update Tue May 20 19:21:04 2014 
 */
 
 #ifndef			LIST_H_
@@ -36,5 +36,7 @@ int			in_lst(t_glist*, void*, int (*cmp)(void*, void*));
 int			rm_elem(t_glist*, void *data, int (*cmp)(void*, void*));
 t_glist			*get_rev(t_glist *lst);
 t_glist			*clone_list(t_glist *lst);
+void			*get_elem(t_glist *glst, void *data, int (*cmp)(void*, void*));
+
 
 #endif			/* LIST_H_ */

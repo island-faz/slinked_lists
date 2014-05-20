@@ -5,7 +5,7 @@
 ## Login   <bourhi_a@epitech.net>
 ## 
 ## Started on  Tue Mar 18 18:24:20 2014 
-## Last update Tue May 13 13:42:28 2014 
+## Last update Tue May 20 19:20:39 2014 
 ##
 
 NAME		=	liblist.a
@@ -19,6 +19,7 @@ SRC		= 	src/init_list.c \
 			src/rm_first.c \
 			src/rm_last.c \
 			src/get_rev.c \
+			src/get_elem.c \
 			src/sort_list.c \
 			src/clone_list.c \
 
